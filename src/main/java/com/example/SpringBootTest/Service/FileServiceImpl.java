@@ -19,13 +19,14 @@ import java.util.Objects;
 public class FileServiceImpl implements FileService{
     private String uploadPath = "C:/Users/11703/Desktop/handWrite_labeling/deep-text-recognition-benchmark/demo_image/upload_img/";
 
+
     public List<ImageDTO> uploadImageFiles(MultipartFile[] uploadFiles){
         List<ImageDTO> imageDTOList = new ArrayList<>();
 
         if(!Objects.isNull(uploadFiles)){
             for (MultipartFile multipartFile : uploadFiles){
                 if(!Objects.requireNonNull(multipartFile.getContentType().startsWith("image"))){
-                    log.warn("업로드한 파일이 이미지가 아닙니다.");
+                    log.warn("업로드한 파일이 이미지가 아닙니다");
                 }
                 String originalFilename = multipartFile.getOriginalFilename();
                 String filename = originalFilename.substring(originalFilename.lastIndexOf("//") + 1);
