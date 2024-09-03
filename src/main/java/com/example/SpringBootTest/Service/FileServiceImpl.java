@@ -2,6 +2,7 @@ package com.example.SpringBootTest.Service;
 
 import com.example.SpringBootTest.DTO.ImageDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,8 +18,10 @@ import java.util.Objects;
 @Slf4j
 @Service
 public class FileServiceImpl implements FileService{
-    private String uploadPath = "C:/Users/11703/Desktop/handWrite_labeling/deep-text-recognition-benchmark/demo_image/upload_img/";
+    //private String uploadPath = "C:/Users/11703/Desktop/handWrite_labeling/deep-text-recognition-benchmark/demo_image/upload_img/";
 
+    @Value("${upload_path}/upload_img/")
+    private String uploadPath;
 
     public List<ImageDTO> uploadImageFiles(MultipartFile[] uploadFiles){
         List<ImageDTO> imageDTOList = new ArrayList<>();

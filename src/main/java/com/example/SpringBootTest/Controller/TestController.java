@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/image")
+@RequestMapping(value = "/api")
 @RequiredArgsConstructor
 @Slf4j
 public class TestController {
@@ -55,7 +55,7 @@ public class TestController {
     @PostMapping("/fileUpload")
     public CResponseEntity<Integer> registerController(ImageDTO imageDTO, MultipartFile[] files) throws IOException, InterruptedException {
         log.info("이미지 등록 imageDTO = {}", imageDTO);
-        folderInitService.mainImageFolderInit();
+        //folderInitService.mainImageFolderInit();
         int result = imageService.uploadFiles(imageDTO, files);
         return new CResponseEntity<>(true, StatusCode.OK, result);
     }

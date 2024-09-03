@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ImageResult", schema = "imageList")
+@Table(name = "ImageResult", schema = "imagelist")
 @Getter
 @Setter
 @Builder
