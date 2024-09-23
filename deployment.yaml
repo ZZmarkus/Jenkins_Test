@@ -12,10 +12,6 @@ spec:
       labels:
         app: hello
     spec:
-      tolerations:
-        - key: "node-role.kubernetes.io/control-plane"
-          operator: "Exists"
-          effect: "NoSchedule"
       containers:
         - name: hello
           image: jbc21c/hello:second
