@@ -12,6 +12,17 @@ spec:
       labels:
         app: hello
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - inzidlsv1
+                      - inzidlsv2
       containers:
         - name: hello
           image: jbc21c/hello:second
