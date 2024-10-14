@@ -9,4 +9,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+  volumes:
+    - /data1/share_tf/hmjoe/kube_space:/home
   type: NodePort
