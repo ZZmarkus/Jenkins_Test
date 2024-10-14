@@ -28,3 +28,12 @@ spec:
           image: jbc21c/hello:second
           ports:
             - containerPort: 8080
+          volumeMounts:
+            - mountPath: /home
+              name: hello-volume
+
+      volumes:
+        - name: hello-volume
+          hostPath:
+            path: /data1/share_tf/hmjoe/kube_space
+            type: Directory
