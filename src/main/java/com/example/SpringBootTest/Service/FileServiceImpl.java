@@ -34,6 +34,7 @@ public class FileServiceImpl implements FileService{
                 String originalFilename = multipartFile.getOriginalFilename();
                 String filename = originalFilename.substring(originalFilename.lastIndexOf("//") + 1);
                 String saveName = uploadPath + filename;
+                log.info("이미지 저장경로 = {}", saveName);
 
                 Path savePath = Paths.get(saveName);
                 try{
