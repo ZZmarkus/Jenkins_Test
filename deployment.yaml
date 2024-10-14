@@ -30,10 +30,9 @@ spec:
             - containerPort: 8080
           volumeMounts:
             - mountPath: /home
-              name: hello-volume
+              name: nfs-volume
 
       volumes:
-        - name: hello-volume
-          hostPath:
-            path: /data1/share_tf/hmjoe/kube_space
-            type: DirectoryOrCreate
+        - name: nfs-volume
+            persistentVolumeClaim:
+              claimName: nfs-pvc
