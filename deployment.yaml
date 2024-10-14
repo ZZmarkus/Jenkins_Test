@@ -36,4 +36,4 @@ spec:
         - name: hello-volume
           hostPath:
             path: /data1/share_tf/hmjoe/kube_space
-            type: Directory
+            type: DirectoryOrCreate
